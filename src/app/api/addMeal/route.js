@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 const prisma = new PrismaClient();
 
 export async function POST(request) {
-
+    console.log("hello")
     const req = await request.json();
     const { breakfast, lunch, dinner, email, listDay } = await req;
 
