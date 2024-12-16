@@ -8,8 +8,6 @@ export async function POST(request) {
     const req = await request.json();
     const { breakfast, lunch, dinner, email, listDay } = await req;
 
-    // try {
-
     const user = await prisma.user.findMany({
         where: {
             email: email
@@ -36,11 +34,6 @@ export async function POST(request) {
             meals: true
         }
     })
-
-    // }
-    // catch (err) {
-    //     console.log("Error inside addMeal :", err)
-    // }
 
     return NextResponse.json(
         { message: 'Submitted successfully!', latestUserData },
